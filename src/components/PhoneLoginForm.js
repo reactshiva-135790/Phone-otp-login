@@ -25,6 +25,10 @@ const PhoneLoginForm = () => {
     setShowOtpInput(true);
   };
 
+  const onOtpSubmit = (otp) =>{
+    console.log("login succesfull", otp)
+  }
+
   return (
     <>
       {!showOtpInput ? (
@@ -40,7 +44,7 @@ const PhoneLoginForm = () => {
       ) : (
         <div>
           <p>Enter Otp Sent to {phoneNumber}</p>
-          <OtpInput />
+          <OtpInput length={4} onOtpSubmit={onOtpSubmit} />
         </div>
       )}
     </>
